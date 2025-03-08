@@ -1,0 +1,99 @@
+.MainBlock{
+  width: 50%;
+  margin: 0 200px;
+  padding: 100px;
+
+}
+
+.MainBlock .MemText{
+  margin: 10px auto;
+  font-size: 1.0em;
+}
+
+.MainBlock .ContainerCalculate{
+  width: 310px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 7px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: aliceblue;
+}
+
+
+
+.MainBlock .ContainerCalculate .InputGraf{
+  margin: 5px auto;
+}
+
+.MainBlock .ContainerCalculate .InputGraf input{
+  width: 97%;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: right;
+  font-family: inherit;
+}
+
+.MainBlock .ContainerCalculate .buttons .Line .but{
+  color: white;
+  background-color: #8291ff;
+  transition: 0.5s;
+}
+
+/*
+
+    <div className="MainBlock">
+      <div className="MemText">
+        <p>Если вы читаете это, знайте.</p>
+        <p>Вам калькулятор не нужен.</p>
+        <p>Вам нужно послушать это.</p>
+      </div>
+    </div>
+*/
+
+.MainBlock .ContainerCalculate .buttons .Line .butMain{
+  color: white;
+  background-color: #a1acff;
+  transition: 0.5s;
+}
+
+.MainBlock .ContainerCalculate .buttons .Line .butExt{
+  color: white;
+  background-color: #fa7272;
+  transition: 0.5s;
+}
+
+.MainBlock .ContainerCalculate .buttons .Line .but:hover{
+  color: rgb(76, 76, 76);
+  background-color: #ffbb91;
+}
+
+.MainBlock .ContainerCalculate .buttons .Line .butMain:hover{
+  color: rgb(76, 76, 76);
+  background-color: #ffbb91;
+}
+
+.MainBlock .ContainerCalculate .buttons .Line .butExt:hover{
+  color: rgb(76, 76, 76);
+  background-color: #ffbb91;
+}
+
+button {
+  border: 1px solid transparent;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 1px;
+  width: 75px;
+  height: 75px;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #686fee;
+}
+button:focus, button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
