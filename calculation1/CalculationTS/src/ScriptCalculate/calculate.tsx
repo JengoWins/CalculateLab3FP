@@ -22,18 +22,20 @@ export const buttonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     let inputLine=(document.getElementById("InputCalculate") as HTMLInputElement).value;//Значение поля ввода
     let butOperate = (event.target as HTMLButtonElement).value;//Значение кнопки
     //Проверка того, что поле ввода не пустое
-    const InCheck = CheckEmptiness(inputLine,butOperate);
+    const InCheck = CheckEmptiness(inputLine, butOperate);
     console.log("Проверка пустоты - "+InCheck)
-    //Выполнение поиска операнда, связанные с одним операндом
-    const eventStandart = variationAdditional(Logger, element);
-    //Условие служит для проверки работы функции для выделения остатка 
-    if(element.operation===","){
-        if(eventStandart!.toString()==="Существует точка")
-            console.log("Существует точка")
-        else
-            (document.getElementById("InputCalculate") as HTMLInputElement).value += eventStandart!.toString();
-    }else
-        (document.getElementById("InputCalculate") as HTMLInputElement).value = eventStandart!.toString();
+    if(InCheck===true){
+        //Выполнение поиска операнда, связанные с одним операндом
+        const eventAdditional = variationAdditional(Logger, element);
+        //Условие служит для проверки работы функции для выделения остатка 
+        if(element.operation===","){
+            if(eventAdditional!.toString()==="Существует точка")
+                console.log("Существует точка")
+            else
+                (document.getElementById("InputCalculate") as HTMLInputElement).value += eventAdditional!.toString();
+        }else
+            (document.getElementById("InputCalculate") as HTMLInputElement).value = eventAdditional!.toString();
+    }
 };
 
 //Нажатие кнопок, которые отвечают за добавления операции к операндам
@@ -42,6 +44,7 @@ export const buttonClickActive = (event: React.MouseEvent<HTMLButtonElement>) =>
     let butOperate = (event.target as HTMLButtonElement).value;
     //Проверка того, что поле ввода не пустое
     const InCheck = CheckEmptiness(inputLine,butOperate);
+    (document.getElementById("InputCalculate") as HTMLInputElement).value = "";
     console.log("Проверка пустоты - "+InCheck)
 };
 
@@ -64,13 +67,16 @@ export const buttonClickExt = (event: React.MouseEvent<HTMLButtonElement>) => {
     {
         if(element.operator1===0){
             let inputNumber = Number(inputLine);
-            element.operator1=inputNumber;
+            if(!Number.isNaN(inputNumber)){
+                element.operator1=inputNumber;
+            }
         }else if(element.operator1!==0){
             let inputNumber = Number(inputLine);
-            element.operator2=inputNumber;
+            if(!Number.isNaN(inputNumber)){
+                element.operator2=inputNumber;
+            }
         }
     }
-    //Запуск работы с очисткой или выполнения операций с двумя операндами
     const eventHeavy = variationExt(Logger, element);
     (document.getElementById("InputCalculate") as HTMLInputElement).value = eventHeavy!.toString();
     //Очистка хранилища данных
@@ -90,9 +96,11 @@ export const CheckEmptiness = (inputLine:string,butOperate:string)=>{
     if(inputLine!=="")
     {
         let inputNumber = Number(inputLine);
-        element.operator1=inputNumber;
-        element.operation=butOperate;
-        check=true;
+        if(!Number.isNaN(inputNumber)){
+            element.operator1=inputNumber;
+            element.operation=butOperate;
+            check=true;
+        }
     }
     else if(inputLine==="")
     {

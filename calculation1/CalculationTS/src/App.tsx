@@ -4,9 +4,10 @@ import {buttonClick,buttonClickActive,buttonClickExt,buttonClickMain} from './Sc
 
 function App() {
   //const [count, setCount] = useState(0)
+  //<button className="but" value="%" onClick={buttonClick}>%</button>
+  //<button className="but" value="CE">CE</button>
   return (
     <>
-    
     <div className="MainBlock">
       <h1>Калькулятор</h1>
         <div className="ContainerCalculate">
@@ -15,8 +16,6 @@ function App() {
             </div>
             <div className="buttons">
               <div className="Line">
-                <button className="but" value="%" onClick={buttonClick}>%</button>
-                <button className="but" value="CE">CE</button>
                 <button className="butExt" value="C" onClick={buttonClickExt}>C</button>
                 <button className="butExt" value="del" onClick={buttonClickExt}>del</button>
               </div>

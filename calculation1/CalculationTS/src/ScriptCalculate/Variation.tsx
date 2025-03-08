@@ -1,7 +1,7 @@
 import { setElement } from "./calculate";
 import { DeMulti, DivideОneBy, Minus, Multi, Plus, Point, Pow, Procetion, Sqrt } from "./FunctionCalculate";
 
-//Набор switch-case условий, проверяет операцию калькулятора. В зависимости от выбора, запускает функции из файла calculate
+//Набор switch-case условий, проверяет операцию калькулятора. В зависимости от выбора, запускает функции из файла FunctionCalculate
 //Файл состоит из трех методов.
 
 //Данный метод проверяет операцию, который ввел пользователь.
